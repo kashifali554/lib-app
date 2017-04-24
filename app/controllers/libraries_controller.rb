@@ -13,6 +13,10 @@ class LibrariesController < ApplicationController
     redirect_to libraries_path  # very light on the error handling, for now!
   end
 
+  def show
+    @library = Library.find_by_id(params[:id])
+  end
+
   private
 
   def library_params
